@@ -1,4 +1,6 @@
-https://github.com/emedinak/little-calculator.git
+Repository: https://github.com/emedinak/little-calculator.git
+
+Live calculator: https://emedinak.github.io/little-calculator/calculator.html
 
 # The Little Calculator
 
