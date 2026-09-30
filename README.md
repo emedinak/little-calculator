@@ -2,6 +2,8 @@ https://github.com/emedinak/little-calculator.git
 
 # The Little Calculator
 
+Student: Eduardo Medina Krumholz
+
 Web calculator built with HTML, CSS and vanilla JavaScript for the Mobile and Web Technologies course (CEU San Pablo).
 
 ## Files
