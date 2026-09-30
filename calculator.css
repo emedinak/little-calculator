@@ -56,7 +56,8 @@ input:focus { outline: none; border-color: #8fd14f; }
 .big.error { background: #ffd0d0; border-color: #ff6b6b; color: #7a1010; }
 
 .group { display: grid; gap: 8px; }
-.unary, .binary { grid-template-columns: repeat(4, 1fr); }
+.unary { grid-template-columns: repeat(5, 1fr); }
+.binary { grid-template-columns: repeat(4, 1fr); }
 .csv { grid-template-columns: repeat(3, 1fr); }
 
 button {

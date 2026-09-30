@@ -34,14 +34,28 @@ The grey/amber box under the screen (`#info`) shows information about the result
 
 ## Extras added
 
-Beyond the mandatory task we added three extra operations:
+Beyond the mandatory task we added these extras:
 
 - **Cube:** `cube()` (button `x³`).
 - **Subtraction:** `subtraction()` (button `−`), calculated in `eq()` like the other binary operations.
 - **Average:** `average()` (CSV button `average`).
+- **Square root:** `sqrt()` (button `√x`). The info field says whether the number is positive or zero, and a negative number shows an error.
+- **Keyboard shortcuts** (see below).
 
 We also added **out-of-range errors**: numbers above `1e15` are rejected by `validate()`, the factorial of numbers above 170 is rejected (the result would be `Infinity`), and `eq()` rejects non-finite results.
 
 ## Keyboard accessibility
 
 All buttons are real `<button>` elements, so they can be reached with Tab and pressed with Enter or Space. The focused button has a visible outline.
+
+Keyboard shortcuts (also shown as a tooltip on each button):
+
+| Keys | Action | Keys | Action |
+|---|---|---|---|
+| Enter | `=` | Alt+U | sum |
+| Alt+S | square | Alt+V | average |
+| Alt+C | cube | Alt+O | sort |
+| Alt+R | square root | Alt+E | reverse |
+| Alt+M | modulus | Alt+L | remove last |
+| Alt+F | factorial | Alt+A | addition |
+| Alt+T | subtraction | Alt+X | multiplication |

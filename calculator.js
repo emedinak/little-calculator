@@ -13,13 +13,14 @@ const show_info = (message, error) => {
 };
 
 // Info field: depends on the result shown in the input
-const fill_info = (result) => {
+// extra (optional) is added at the end of the message
+const fill_info = (result, extra = "") => {
   if (result < 100) {
-    show_info("Info: The result is less than 100", false);
+    show_info("Info: The result is less than 100" + extra, false);
   } else if (result <= 200) {
-    show_info("Info: The result is between 100 and 200", false);
+    show_info("Info: The result is between 100 and 200" + extra, false);
   } else {
-    show_info("Info: The result is greater than 200", false);
+    show_info("Info: The result is greater than 200" + extra, false);
   }
 };
 
@@ -82,6 +83,18 @@ const cube = () => {
   if (x === null) return;
   document.getElementById("input").value = x ** 3;
   fill_info(x ** 3);
+};
+
+const sqrt = () => {
+  const x = read_number();
+  if (x === null) return;
+  if (x < 0) {
+    show_info("Error: the number is negative, so it has no real square root", true);
+    return;
+  }
+  const result = Math.sqrt(x);
+  document.getElementById("input").value = result;
+  fill_info(result, ". The number is " + (x === 0 ? "zero" : "positive"));
 };
 
 const mod = () => {
@@ -194,3 +207,30 @@ const removelast = () => {
   document.getElementById("input").value = list.join(",");
   show_info("Info: The last element has been removed (" + list.length + " elements left)", false);
 };
+
+// ---------- Keyboard shortcuts ----------
+// Alt + key, and Enter for "="
+const shortcuts = {
+  KeyS: () => square(),
+  KeyC: () => cube(),
+  KeyR: () => sqrt(),
+  KeyM: () => mod(),
+  KeyF: () => fact(),
+  KeyA: () => addition(),
+  KeyT: () => subtraction(),
+  KeyX: () => multiplication(),
+  KeyU: () => sum(),
+  KeyV: () => average(),
+  KeyO: () => sort(),
+  KeyE: () => reverse(),
+  KeyL: () => removelast()
+};
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && event.target.tagName !== "BUTTON") {
+    eq();
+  } else if (event.altKey && shortcuts[event.code]) {
+    event.preventDefault();
+    shortcuts[event.code]();
+  }
+});
