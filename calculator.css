@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 24px 12px;
+  font-family: Arial, sans-serif;
+  background: #f5ecd7;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Black calculator body */
+.calculator {
+  width: 100%;
+  max-width: 380px;
+  padding: 22px;
+  background: #1c1c1e;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(60, 40, 10, 0.4);
+}
+
+h1 { margin: 0 0 14px; font-size: 1.2em; text-align: center; color: #d8d8d8; }
+h3 { margin: 16px 0 6px; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; color: #8e8e93; }
+
+/* Green LCD screen */
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 12px;
+  font-family: "Courier New", monospace;
+  font-size: 1.5em;
+  text-align: right;
+  font-weight: bold;
+  color: #0a1a0a;
+  background: #a8c66c;
+  border: 3px solid #333;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+input::placeholder { color: #2f4a17; font-size: 0.6em; font-weight: normal; }
+input:focus { outline: none; border-color: #8fd14f; }
+
+.big {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #3d2a00;
+  background: #ffe2a8;
+  border: 1px solid #ffb340;
+  border-radius: 6px;
+  animation: fade 0.4s;
+}
+.big.error { background: #ffd0d0; border-color: #ff6b6b; color: #7a1010; }
+
+.group { display: grid; gap: 8px; }
+.unary, .binary { grid-template-columns: repeat(4, 1fr); }
+.csv { grid-template-columns: repeat(3, 1fr); }
+
+button {
+  padding: 12px 4px;
+  font-size: 1em;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.1s, filter 0.2s, box-shadow 0.1s;
+}
+.unary button { background: #48484a; }
+.binary button { background: #ff9f0a; }
+.binary .equal { background: #30b350; }
+.csv button { background: #636366; }
+
+button:hover { filter: brightness(1.2); }
+button:active { transform: translateY(3px); box-shadow: none; }
+button:focus { outline: 3px solid #8fd14f; outline-offset: 2px; }
+
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }

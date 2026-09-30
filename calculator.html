@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Little Calculator</title>
+  <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+  <div class="calculator">
+    <h1>The Little Calculator</h1>
+
+    <input type="text" id="input" placeholder="Number or CSV list (e.g. 3,1.5,-2)" aria-label="Number or CSV list">
+    <h2 id="info" class="big" title="Info about the number">Information about the number</h2>
+
+    <h3>Unary operations</h3>
+    <div class="group unary">
+      <button id="square" onclick="square()">x²</button>
+      <button id="cube" onclick="cube()">x³</button>
+      <button id="modulo" onclick="mod()">|x|</button>
+      <button id="factorial" onclick="fact()">x!</button>
+    </div>
+
+    <h3>Binary operations</h3>
+    <div class="group binary">
+      <button id="addition" onclick="addition()">+</button>
+      <button id="subtraction" onclick="subtraction()">−</button>
+      <button id="multiplication" onclick="multiplication()">×</button>
+      <button id="equal" class="equal" onclick="eq()">=</button>
+    </div>
+
+    <h3>CSV operations</h3>
+    <div class="group csv">
+      <button id="sum" onclick="sum()">sum</button>
+      <button id="average" onclick="average()">average</button>
+      <button id="sort" onclick="sort()">sort</button>
+      <button id="reverse" onclick="reverse()">reverse</button>
+      <button id="removelast" onclick="removelast()">remove last</button>
+    </div>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
